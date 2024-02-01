@@ -12,5 +12,4 @@ The player keeps choosing letters until they reveal all the letters in the phras
 
 
 I added an element in the project to allow the player to press their physical keyboard as an option instead of only clicking the onscreen keyboard.
-Only if the player presses the physical keyboard and presses a wrong letter that is not in the phrase will a style change that I created be triggered.
-The style change I created changes the entire screen to pink and displays a message to the player instructing them the letter pressed was a wrong guess.
+The style change I created changes the entire screen to pink and displays a message to the player instructing them the game is over and they lost.
