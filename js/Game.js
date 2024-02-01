@@ -121,6 +121,7 @@ class Game {
 
         } else if (this.missed > 4) {
             overlay.classList.add('lose'); 
+            overlay.style.backgroundColor = 'pink';
             titleMessage.textContent = "Oh no, You've Lost! Better Luck, next time!";
             overlay.style.display = 'flex';
            

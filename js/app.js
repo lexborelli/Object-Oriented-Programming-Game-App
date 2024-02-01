@@ -39,12 +39,8 @@ document.addEventListener('keyup', (event) => {
    keys.forEach(key => {
     if (key.textContent === event.key && !key.disabled) {
         game.handleInteraction(key);
-    } else {
-        overlay.style.backgroundColor = 'pink';
-        titleMessage.textContent = "Sorry that is not the right letter. Try again! You got this!";
-        overlay.style.display = 'flex';
-    }
-   });
+    } 
+   })
 
 });
 
