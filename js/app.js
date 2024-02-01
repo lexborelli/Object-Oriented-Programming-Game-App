@@ -32,7 +32,7 @@ qwerty.addEventListener('click', (event) => {
 
 /**added an event listener to the document to listen when a users physical keyboard is pressed and the keyboard key is released. I used the forEach method to call a function for the key class which are the buttons on the onscreen keyboard. The forEach method  calls a function for each key in the keys class. 
  * If the key is pressed on the physical keyboard is released which will trigger the html association with the button letter and the key is not disabled, then the key will trigger the handleInteraction method and pass the key selected to through the method.
- If the wrong letter is selected then the div with the id overlay willchange the background color to pink and the titleMessage will display a message. */
+ */
 
 document.addEventListener('keyup', (event) => {
     

@@ -110,7 +110,8 @@ class Game {
 
     /**Displays game over message. @param {boolean} gameWon - Whether or not the user won the game
     * gameOver(): this method displays the original start screen overlay, and depending on the outcome of the game, updates the overlay h1 element with a friendly win or loss message, and replaces the overlay’s start CSS class with either the win or lose CSS class.
-      This method checks if the checkForWin method returns true which means all the letters in the phrase have been displayed. If so, the win class is displayed. if not then the the else if is triggered which checks if the player has more than 4 missed letter guesses, which will trigger the lose class.*/
+      This method checks if the checkForWin method returns true which means all the letters in the phrase have been displayed. If so, the win class is displayed. if not then the the else if is triggered which checks if the player has more than 4 missed letter guesses, which will trigger the lose class.
+      !!!!! Changed background color in the project from red to pink*/
 
     gameOver() {
 
