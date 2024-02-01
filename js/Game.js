@@ -28,11 +28,93 @@ class Game {
         return randomPhrase; 
     };
 
-    /*handleInteraction() {
+/**
+* Handles onscreen keyboard button clicks
+* @param (HTMLButtonElement) button - The clicked button element
+*/
 
-    }*/
+    handleInteraction(key) {
+        key.disabled = true;
 
+        const keySelected = key.textContent;
+
+        //const isLetterThere = this.activePhrase.checkLetter(key);
+          
+         if (this.activePhrase.checkLetter(keySelected)) {
+            key.classList.add('chosen');
+            this.activePhrase.showMatchedLetter(keySelected); 
+    
+        } if (this.checkForWin()) {
+            this.gameOver();
+
+    } else if (!this.activePhrase.checkLetter(keySelected)) {
+            key.classList.add('wrong');
+            this.removeLife();
+
+        }
+
+    }
+        
+    /**
+* Checks for winning move
+* @return {boolean} True if game has been won, false if game wasn't
+won */
+    
+    checkForWin() {
+    const letterInHiding = document.querySelectorAll('.letter.hide'); 
+
+    if (letterInHiding.length === 0) {
+        overlay.classList.add('win'); 
+        titleMessage.textContent = "Yay, You've Won!";
+        overlay.style.display = 'flex';
+        return true;
+    } else {
+        return false;
+     }
+    }
+
+/**
+* Increases the value of the missed property
+* Removes a life from the scoreboard
+* Checks if player has remaining lives and ends game if player is out
+*/
+
+    removeLife() {
+
+        const hearts = document.querySelectorAll('.tries img'); 
+        
+        for (let i = 0; i < hearts.length; i++) {
+            if (hearts[i].getAttribute('src') === 'images/liveHeart.png') {
+                this.missed ++;
+                hearts[i].src = "images/lostHeart.png";
+                break;
+             }
+            }
+
+        if (this.missed > 4) {
+            this.gameOver();
+        }
+    }
+
+/**
+* Displays game over message
+* @param {boolean} gameWon - Whether or not the user won the game
+*/
+
+    gameOver() {
+
+        if (this.checkForWin()) {
+            overlay.classList.add('win'); 
+            titleMessage.textContent = "Yay, You've Won!";
+            overlay.style.display = 'flex';
+
+        } else if (this.missed > 4) {
+            overlay.classList.add('lose'); 
+            titleMessage.textContent = "Oh no, You've Lost! Better Luck, next time!";
+            overlay.style.display = 'flex';
+           
+        }
+
+    }
 
 }
-
-
