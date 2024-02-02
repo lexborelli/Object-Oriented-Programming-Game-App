@@ -54,16 +54,13 @@ class Game {
          if (this.activePhrase.checkLetter(keySelected)) {
             key.classList.add('chosen');
             this.activePhrase.showMatchedLetter(keySelected); 
-    
-        } if (this.checkForWin()) {
-            this.gameOver();
-
-        } else if (!this.activePhrase.checkLetter(keySelected)) {
+            if (this.checkForWin()) {
+                this.gameOver();
+            } 
+         } else if (!this.activePhrase.checkLetter(keySelected)) {
             key.classList.add('wrong');
             this.removeLife();
-
         }
-
     }
         
     /**
@@ -76,9 +73,6 @@ class Game {
     const letterInHiding = document.querySelectorAll('.letter.hide'); 
 
     if (letterInHiding.length === 0) {
-        overlay.classList.add('win'); 
-        titleMessage.textContent = "Yay, You've Won!";
-        overlay.style.display = 'flex';
         return true;
     } else {
         return false;
@@ -114,11 +108,13 @@ class Game {
       !!!!! Changed background color in the project from red to pink*/
 
     gameOver() {
+        const lose = document.querySelector('.lose');
 
         if (this.checkForWin()) {
             overlay.classList.add('win'); 
             titleMessage.textContent = "Yay, You've Won!";
             overlay.style.display = 'flex';
+            overlay.style.backgroundColor = 'green';
 
         } else if (this.missed > 4) {
             overlay.classList.add('lose'); 
