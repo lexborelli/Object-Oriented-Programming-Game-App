@@ -12,4 +12,4 @@ The player keeps choosing letters until they reveal all the letters in the phras
 
 
 I added an element in the project to allow the player to press their physical keyboard as an option instead of only clicking the onscreen keyboard.
-The style change I created changes the entire screen to pink and displays a message to the player instructing them the game is over and they lost.
+The style change I created changes the entire screen to pink if a lay has guessed incorrectly and lost all their lives. Then a display message will instruct the player they have lost the game. 
